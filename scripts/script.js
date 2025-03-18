@@ -24,6 +24,9 @@ let cardsOnPageState = [];
 
 // Первая загрузка ✅
 
+// Добавляем класс для стилизации скроллбара
+cardsContainer.classList.add('custom-scrollbar');
+
 showPreloader(preloaderTmp, videoContainer);
 showPreloader(preloaderTmp, cardsContainer);
 mainMechanics(endpoint);
@@ -86,9 +89,6 @@ async function mainMechanics(endpoint) {
     await delay(preloaderWaitindTime);
     removePreloader(videoContainer, '.preloader');
     removePreloader(cardsContainer, '.preloader');
-
-    // Добавляем класс для стилизации скроллбара
-    cardsContainer.classList.add('custom-scrollbar');
 
     chooseCurrentVideo({
       baseUrl: BASE_URL,
